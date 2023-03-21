@@ -1,0 +1,32 @@
+version: '3.4'
+services:
+  app:
+    image: odoo:16
+    ports:
+      - 8069:8069
+      - 8072:8072
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo16@2022
+    volumes:
+      - ../etc:/etc/odoo
+      - ../extra-addons/:/mnt/extra-addons
+      - ../.devcontainer:/mnt/.devcontainer
+      - ../.vscode:/mnt/.vscode
+      - ../default.code-workspace:/mnt/default.code-workspace
+      - ../README.md:/mnt/README.md
+      
+
+  db:
+    image: postgres:15
+    user: root
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo16@2022      
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    volumes:
+        - ../postgresql:/var/lib/postgresql/data

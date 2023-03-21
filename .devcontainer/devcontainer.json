@@ -1,0 +1,8 @@
+{
+  "name": "Odoo container",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/mnt",
+  "shutdownAction": "stopCompose"
+
+}

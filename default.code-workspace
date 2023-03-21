@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "..",
+      "name": "addons"
+    },
+    {
+      "path": "../../usr/lib/python3/dist-packages/odoo",
+      "name": "odoo"
+    },
+    {
+      "path": "/etc/odoo",
+      "name": "config"
+    }
+  ],
+  "settings": {
+    "git.ignoreLimitWarning": true
+  }
+}
